@@ -9,6 +9,8 @@ const SignupPage = () => {
   const [disabled, setDisabled] = useState(false)
   const queryClient = useQueryClient()
   const handleSignup = async (credentials) => {
+    toast.info("Creating accounts with email is disabled for now")
+    return
     const { email, password, name} = Object.fromEntries(credentials)
     await authClient.signUp.email({email, password, name,
       image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"

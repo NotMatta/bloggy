@@ -26,9 +26,9 @@ const SettingsPage = () => {
     <div className="space-y-2">
       <h1 className="text-3xl font-bold mb-2">Settings</h1>
       <h2 className="text-xl mb-1">Profile</h2>
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col md:flex-row gap-2 items-center">
         <img src={Image} className="w-32 h-32 rounded-full shrink-0 object-cover"/>
-        <div className="w-full grid grid-rows-2 grid-cols-2 gap-2">
+        <div className="w-full flex flex-col items-center md:grid grid-rows-2 grid-cols-2 gap-2">
           <Input value={Name} onChange={(e) => setName(e.target.value)} placeholder="Name"/>
           <Button className="w-fit" disabled={disabled || Name == session.user.name}  onClick={async () => {
             setDisabled(true)

@@ -36,7 +36,7 @@ const BlogPage = () => {
           <p className="text-accent-foreground">{formatDateAgo(blog?.createdAt)}</p>
           {blog.fetchedAt + 1000 * 60 * 5 < Date.now() && <Button variant="outline" onClick={query.refetch} disabled={query.isRefetching}><RefreshCw/> Refresh</Button>}
         </div>
-        <Link href={`/profile/${blog.authorId}`} className="flex items-center justify-center gap-2">
+        <Link href={`/profile/${blog.authorId}`} className="flex items-center justify-center gap-2 underline">
           <img src={blog?.author.image} className="w-8 h-8 rounded-full object-cover"/>
           <span>{blog?.author.name}</span>
         </Link>
