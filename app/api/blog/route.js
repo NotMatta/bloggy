@@ -1,8 +1,7 @@
-import { NextRequest } from "next/server";
 import { prisma } from "@/prisma/prisma";
 
-export const GET = async (request) => {
-  const id = request.nextUrl.searchParams.get("id");
+export const GET = async (req) => {
+  const id = new URL(req.url).searchParams.get("id")
   if(!id){
     return Response.json({error: "Missing required fields"}, {status: 400})
   }

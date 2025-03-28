@@ -1,12 +1,11 @@
 import { prisma } from "@/prisma/prisma"
-import { NextRequest } from "next/server";
 
-export const GET = async (request) => {
+export const GET = async (req) => {
+  const search = new URL(req.url).searchParams.get("q")
+  if(!search){
+    return Response.json({error: "Missing required fields"}, {status: 400})
+  }
   try{
-    const search = request.nextUrl.searchParams.get("q");
-    if(!search){
-      return Response.json({error: "Missing required fields"}, {status: 400})
-    }
     if(search.length < 3){
       return Response.json({error: "Search query too short"}, {status: 400})
     }
