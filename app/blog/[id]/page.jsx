@@ -31,9 +31,9 @@ const BlogPage = () => {
   return (
     <div className="h-0 w-full flex-grow overflow-y-scroll flex flex-col items-center gap-4">
       <div className="flex flex-col items-center gap-2">
-        <h1 className="text-4xl font-bold tracking-widest md:w-2/3 text-center">{blog?.title}</h1>
-        <div className="flex gap-2 items-center">
-          <p className="text-accent-foreground">{formatDateAgo(blog?.createdAt)}</p>
+        <h1 className="text-4xl font-bold md:max-w-2/3 text-center">{blog?.title}</h1>
+        <div className="flex gap-2 items-center justify-center">
+          <p className="text-accent-foreground text-center">{formatDateAgo(blog?.createdAt)}</p>
           {blog.fetchedAt + 1000 * 60 * 5 < Date.now() && <Button variant="outline" onClick={query.refetch} disabled={query.isRefetching}><RefreshCw/> Refresh</Button>}
         </div>
         <Link href={`/profile/${blog.authorId}`} className="flex items-center justify-center gap-2 underline">
