@@ -44,7 +44,7 @@ Bloggy is a personal portfolio project designed to demonstrate proficiency in mo
 1.  Clone the repository:
 
     ```bash
-    git clone [your-repo-url]
+    git clone https://github.com/NotMatta/bloggy
     cd bloggy
     ```
 
